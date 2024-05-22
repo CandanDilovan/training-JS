@@ -1,7 +1,13 @@
 var a = 12;
 
-var msg = " wassup guiz" + a + "mdr cest quoi le delire";
+var msg = [" wassup guiz" + a + "mdr cest quoi le delire", " truc ", " bidule "] ;
 
-console.log("wassup mes " + a + " nigaz" + msg);
+var wtfisthishit = {
+	meingod: "truc",
+	cestropfort: 12,
+	okfrr: msg
+};
 
-//ok var c'est magique mdr
+console.log( wtfisthishit.meingod + wtfisthishit.okfrr[0]  + " dinguerie" + wtfisthishit.cestropfort);
+
+//ok var c'est magique
