@@ -5,8 +5,9 @@ class balle
 		this.y = y;
 		this.img = new Image();
 		this.img.src = str;
-		this.speed = speed
-		this.dirx = this.speed;
+		this.startspeed = speed
+		this.evospeed;
+		this.dirx = this.startspeed;
 		this.diry = 0;
 	}
 
@@ -23,9 +24,9 @@ class balle
 			this.y = 540;
 			this.diry = 0;
 			if (this.dirx > 0)
-				this.dirx = -this.speed;
+				this.dirx = -this.startspeed;
 			else if (this.dirx < 0)
-				this.dirx = this.speed;
+				this.dirx = this.startspeed;
 		}
 	}
 
@@ -38,19 +39,25 @@ class balle
 			&& (this.y + 30 > img2.y && this.y - 30 < img2.y + 473))
 			{
 				this.dirx *= -1;
-				this.diry += img2.impact(this) * 5;
+				if (this.dirx > 0 && this.startspeed * 5 > this.dirx 
+					|| this.dirx < 0 && this.startspeed * 5 > this.dirx * -1)
+					this.dirx *= 1.1;
+				this.diry += img2.impact(this) * 7;
 			}
 			if (this.y + 30 + this.diry > 1080 || this.y - 30 + this.diry < 0)
-			this.diry *= -1;
+				this.diry *= -1;
 		}
 		//gauche
 		if (this.dirx * ms < 0)
 		{
-			if (this.x + (this.dirx * ms) < img1.x + 61
+			if (this.x - 30 + (this.dirx * ms) < img1.x + 61
 			&& (this.y + 30 > img1.y && this.y - 30 < img1.y + 473))
 			{
 				this.dirx *= -1;
-				this.diry += img1.impact(this) * 5;
+				if (this.dirx > 0 && this.startspeed * 5 > this.dirx 
+					|| this.dirx < 0 && this.startspeed * 5 > this.dirx * -1)
+					this.dirx *= 1.1;
+				this.diry += img1.impact(this) * 7;
 			}
 			if (this.y + 30 + this.diry > 1080 || this.y - 30 + this.diry < 0)
 				this.diry *= -1;
