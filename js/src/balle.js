@@ -1,11 +1,13 @@
 class balle
 {
-	constructor(x, y, str){
+	constructor(x, y, str, speed){
 		this.x = x;
 		this.y = y;
 		this.img = new Image();
 		this.img.src = str;
-		this.dirx = 10;
+		this.speed = speed
+		this.dirx = this.speed;
+		this.diry = 0;
 	}
 
 	drawing(canvcont) 
@@ -13,41 +15,53 @@ class balle
         canvcont.drawImage(this.img, this.x - 30, this.y - 30);
     }
 
-	resetballs()
+	resetballs(ms)
 	{
 		if (this.x < 0 || this.x > 2040)
 		{
 			this.x = 1020;
 			this.y = 540;
+			this.diry = 0;
 			if (this.dirx > 0)
-				this.dirx = -10;
+				this.dirx = -this.speed;
 			else if (this.dirx < 0)
-				this.dirx = 10
+				this.dirx = this.speed;
 		}
 	}
 
-	hit()
+	hit(ms)
 	{
-		if (this.dirx > 0)
+		//droite
+		if (this.dirx * ms > 0)
 		{
-			console.log(img2.y);
-			console.log(img2.y + 473)
-			if (this.x + this.dirx > img2.x
-				&& (this.y > img2.y && this.y < img2.y + 473))
-				this.dirx = -10;
+			if (this.x + 30 + (this.dirx * ms) > img2.x
+			&& (this.y + 30 > img2.y && this.y - 30 < img2.y + 473))
+			{
+				this.dirx *= -1;
+				this.diry += img2.impact(this) * 5;
+			}
+			if (this.y + 30 + this.diry > 1080 || this.y - 30 + this.diry < 0)
+			this.diry *= -1;
 		}
-		if (this.dirx < 0)
+		//gauche
+		if (this.dirx * ms < 0)
 		{
-			if (this.x + this.dirx < img1.x + 61
-				&& (this.y > img1.y && this.y < img1.y + 473))
-				this.dirx = 10;
+			if (this.x + (this.dirx * ms) < img1.x + 61
+			&& (this.y + 30 > img1.y && this.y - 30 < img1.y + 473))
+			{
+				this.dirx *= -1;
+				this.diry += img1.impact(this) * 5;
+			}
+			if (this.y + 30 + this.diry > 1080 || this.y - 30 + this.diry < 0)
+				this.diry *= -1;
 		}
 	}
 	
-	move()
+	move(ms)
 	{
-		this.resetballs();
-		this.hit();
-		this.x += this.dirx;
+		this.resetballs(ms);
+		this.hit(ms);
+		this.x += this.dirx * ms;
+		this.y += this.diry;
 	}
 }
