@@ -29,12 +29,12 @@ class twix
     {
         if (this.up == true)
         {
-            if (this.y - (10 * ms) >= 0)
+            if (this.y - (this.speed * ms) >= 0)
                 this.y -= this.speed * ms;
         }
         if (this.down == true)
         {
-            if (canevas.clientHeight >= this.y + this.img.height)
+            if (canevas.clientHeight >= this.y + this.height + (this.speed * ms))
                 this.y += this.speed * ms;
         }
     }
