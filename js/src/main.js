@@ -17,6 +17,29 @@ function main()
     const interid = setInterval(rien, 1000/60);
 }
 
+function drawwin(img1, img2)
+{
+    let text;
+    canvcont.font = "48px serif";
+    if (img1.score >= 10)
+        text = "WINNER is player 1";
+    else
+        text = "WINNER is player 2";
+    console.log(text);
+    canvcont.fillStyle = "White";
+    canvcont.fillText(text, (canevas.clientWidth / 2.5), canevas.clientHeight / 2);
+}
+
+function drawscore()
+{
+    canvcont.font = "48px serif";
+    let text = img1.score;
+    let text2 = img2.score;
+    canvcont.fillStyle = "White";
+    canvcont.fillText(text, 510, 50);
+    canvcont.fillText(text2, 1530, 50);
+}
+
 function lowkeydown(key){
 
     console.log(key.code);
@@ -28,6 +51,8 @@ function lowkeydown(key){
         img1.up = true;
     else if (key.code == "KeyS")
         img1.down = true;
+    if (key.code == "Space" && (img1.score == 10 || img2.score == 10))
+        reseting();
 }
 
 function lowkeyup(key){
@@ -46,16 +71,30 @@ function lowkeyup(key){
 
 function rien()
 {
-    let newtime = Date.now();
-    ms = (newtime - oldtime) / 1000;
-    oldtime = newtime;
-    img1.moving(ms);
-    img2.moving(ms);
-    ballon.move(ms);
-    canvcont.clearRect(0, 0, canevas.clientWidth, canevas.clientHeight);
-    img1.drawing(canvcont);
-    img2.drawing(canvcont);
-    ballon.drawing(canvcont);
+    if (img1.score < 10 && img2.score < 10)
+    {
+
+        let newtime = Date.now();
+        ms = (newtime - oldtime) / 1000;
+        oldtime = newtime;
+        img1.moving(ms);
+        img2.moving(ms);
+        ballon.move(ms);
+        canvcont.clearRect(0, 0, canevas.clientWidth, canevas.clientHeight);
+        img1.drawing(canvcont);
+        img2.drawing(canvcont);
+        ballon.drawing(canvcont);
+    }
+    else if (img1.score >= 10 || img2.score >= 10)
+        drawwin(img1, img2);
+    drawscore();
+}
+
+function reseting()
+{
+    img1.reset();
+    img2.reset();
+    ballon.resetballs();
 }
 
 main();

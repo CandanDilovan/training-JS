@@ -10,6 +10,13 @@ class twix
         this.img.src = str;
         this.up = false;
         this.down = false
+        this.score = 0;
+    }
+
+    reset(canvcont)
+    {
+        this.y = 300;
+        this.score = 0;
     }
 
     drawing(canvcont) 
@@ -25,16 +32,21 @@ class twix
         return (normal);
     }
 
+    scored()
+    {
+        this.score++;
+    }
+
     moving(ms)
     {
         if (this.up == true)
         {
-            if (this.y - (this.speed * ms) >= 0)
+            if (this.y - (10 * ms) >= 0)
                 this.y -= this.speed * ms;
         }
         if (this.down == true)
         {
-            if (canevas.clientHeight >= this.y + this.height + (this.speed * ms))
+            if (canevas.clientHeight >= this.y + this.height + (10 * ms))
                 this.y += this.speed * ms;
         }
     }

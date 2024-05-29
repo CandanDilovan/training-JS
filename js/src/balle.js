@@ -20,6 +20,10 @@ class balle
 	{
 		if (this.x < 0 || this.x > 2040)
 		{
+			if (this.x > 2040)
+				img1.score++;
+			if (this.x < 0)
+				img2.score++;
 			this.x = 1020;
 			this.y = 540;
 			this.diry = 0;
@@ -39,8 +43,8 @@ class balle
 			&& (this.y + 30 > img2.y && this.y - 30 < img2.y + 473))
 			{
 				this.dirx *= -1;
-				if (this.dirx > 0 && this.startspeed * 5 > this.dirx 
-					|| this.dirx < 0 && this.startspeed * 5 > this.dirx * -1)
+				if (this.dirx > 0 && this.startspeed * 4 > this.dirx 
+					|| this.dirx < 0 && this.startspeed * 4 > this.dirx * -1)
 					this.dirx *= 1.1;
 				this.diry += img2.impact(this) * 7;
 			}
@@ -54,8 +58,8 @@ class balle
 			&& (this.y + 30 > img1.y && this.y - 30 < img1.y + 473))
 			{
 				this.dirx *= -1;
-				if (this.dirx > 0 && this.startspeed * 5 > this.dirx 
-					|| this.dirx < 0 && this.startspeed * 5 > this.dirx * -1)
+				if (this.dirx > 0 && this.startspeed * 4 > this.dirx 
+					|| this.dirx < 0 && this.startspeed * 4 > this.dirx * -1)
 					this.dirx *= 1.1;
 				this.diry += img1.impact(this) * 7;
 			}
