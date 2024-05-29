@@ -15,8 +15,8 @@ class twix
 
     reset(canvcont)
     {
-        this.y = 300;
         this.score = 0;
+        this.y = 300;
     }
 
     drawing(canvcont) 
@@ -41,12 +41,12 @@ class twix
     {
         if (this.up == true)
         {
-            if (this.y - (10 * ms) >= 0)
+            if (this.y - (500 * ms) >= 0)
                 this.y -= this.speed * ms;
         }
         if (this.down == true)
         {
-            if (canevas.clientHeight >= this.y + this.height + (10 * ms))
+            if (canevas.clientHeight >= this.y + this.height + (500 * ms))
                 this.y += this.speed * ms;
         }
     }

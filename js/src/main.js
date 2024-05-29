@@ -3,7 +3,7 @@ let canvcont = canevas.getContext("2d");
 
 let img1 = new twix(0, 300, "../js/img/raquette.jpg", 2000);
 let img2 = new twix(2040 - 61, 300, "../js/img/raquette.jpg", 2000);
-let ballon = new balle(1020, 540, "../js/img/maltesers.png", 500);
+let ballon = new balle(1020, 540, "../js/img/maltesers.png", 1000);
 
 let oldtime;
 let ms;
@@ -77,13 +77,13 @@ function rien()
         let newtime = Date.now();
         ms = (newtime - oldtime) / 1000;
         oldtime = newtime;
-        img1.moving(ms);
         img2.moving(ms);
+        img1.moving(ms);
         ballon.move(ms);
         canvcont.clearRect(0, 0, canevas.clientWidth, canevas.clientHeight);
-        img1.drawing(canvcont);
-        img2.drawing(canvcont);
         ballon.drawing(canvcont);
+        img2.drawing(canvcont);
+        img1.drawing(canvcont);
     }
     else if (img1.score >= 10 || img2.score >= 10)
         drawwin(img1, img2);
@@ -92,9 +92,11 @@ function rien()
 
 function reseting()
 {
-    img1.reset();
+    ballon.x = 1020;
+    ballon.y = 540;
     img2.reset();
     ballon.resetballs();
+    img1.reset();
 }
 
 main();

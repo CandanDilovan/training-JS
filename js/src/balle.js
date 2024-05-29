@@ -7,7 +7,7 @@ class balle
 		this.img.src = str;
 		this.startspeed = speed
 		this.evospeed;
-		this.dirx = this.startspeed;
+		this.dirx = -this.startspeed;
 		this.diry = 0;
 	}
 
@@ -70,8 +70,8 @@ class balle
 	
 	move(ms)
 	{
-		this.resetballs(ms);
 		this.hit(ms);
+		this.resetballs(ms);
 		this.x += this.dirx * ms;
 		this.y += this.diry;
 	}
