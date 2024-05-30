@@ -26,7 +26,7 @@ function drawwin(img1, img2)
     else
         text = "WINNER is player 2";
     console.log(text);
-    canvcont.fillStyle = "White";
+    canvcont.fillStyle = "Black";
     canvcont.fillText(text, (canevas.clientWidth / 2.5), canevas.clientHeight / 2);
 }
 
@@ -35,7 +35,7 @@ function drawscore()
     canvcont.font = "48px serif";
     let text = img1.score;
     let text2 = img2.score;
-    canvcont.fillStyle = "White";
+    canvcont.fillStyle = "Black";
     canvcont.fillText(text, 510, 50);
     canvcont.fillText(text2, 1530, 50);
 }
