@@ -1,9 +1,9 @@
 let canevas = document.getElementById("canv");
 let canvcont = canevas.getContext("2d");
 
-let img1 = new twix(0, 300, "../js/img/raquette.jpg", 2000);
-let img2 = new twix(2040 - 61, 300, "../js/img/raquette.jpg", 2000);
-let ballon = new balle(1020, 540, "../js/img/maltesers.png", 1000);
+let img1 = new twix(0, 300, "../js/img/raquetteR.png", 1000);
+let img2 = new twix(2040 - 74, 300, "../js/img/raquetteL.png", 1000);
+let ballon = new balle(1020, 540, "../js/img/maltesers.png", 500);
 
 let oldtime;
 let ms;
