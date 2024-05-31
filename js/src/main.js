@@ -96,14 +96,8 @@ function rien()
             drawwin(img1, img2);
         drawscore();
     }  
-    if (game_begin != 1)
-    {
-        if (game_begin != 2)
+    if (game_begin == 0)
             oldtime = newtime;
-        ballon.drawing(canvcont);
-        img2.drawing(canvcont);
-        img1.drawing(canvcont);
-    }
 }
         
 function reseting()
@@ -121,10 +115,13 @@ function countdown(ms, newtime)
     if (ms < 4)
     {
         countdown = Math.floor(ms);
-        canvcont.font = "48px serif";
+        canvcont.font = "300px serif";
         canvcont.fillStyle = "Black";
         canvcont.clearRect(0, 0, canevas.clientWidth, canevas.clientHeight);
-        canvcont.fillText(countdown.toString(), (canevas.clientWidth / 2), canevas.clientHeight / 2);
+        ballon.drawing(canvcont);
+        img2.drawing(canvcont);
+        img1.drawing(canvcont);
+        canvcont.fillText(countdown.toString(), (canevas.clientWidth / 2) - 100, (canevas.clientHeight / 2) + 150);
         console.log(countdown);
     }
     else
