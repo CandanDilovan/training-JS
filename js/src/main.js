@@ -51,7 +51,7 @@ function lowkeydown(key){
         img1.up = true;
     else if (key.code == "KeyS")
         img1.down = true;
-    if (key.code == "Space" && (img1.score == 10 || img2.score == 10 || game_begin == 0))
+    if (key.code == "Space" && (img1.score == 3 || img2.score == 3 || game_begin == 0))
     {
         game_begin = 2;
         reseting();
@@ -81,7 +81,7 @@ function rien()
     else if (game_begin == 1)
     {  
         oldtime = newtime;
-        if (img1.score < 10 && img2.score < 10 && game_begin == 1)
+        if (img1.score < 3 && img2.score < 3 && game_begin == 1)
         {
             
             img2.moving(ms);
@@ -92,7 +92,7 @@ function rien()
             img2.drawing(canvcont);
             img1.drawing(canvcont);
         }
-        else if (img1.score >= 10 || img2.score >= 10)
+        else if (img1.score >= 3 || img2.score >= 3)
             drawwin(img1, img2);
         drawscore();
     }  
@@ -114,7 +114,7 @@ function countdown(ms, newtime)
     let countdown;
     if (ms < 4)
     {
-        countdown = Math.floor(ms);
+        countdown = 3 - Math.floor(ms);
         canvcont.font = "300px serif";
         canvcont.fillStyle = "Black";
         canvcont.clearRect(0, 0, canevas.clientWidth, canevas.clientHeight);

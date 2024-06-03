@@ -164,6 +164,19 @@ body
     font-size:0.9em;
 }
 
+.popupbox label #Password2 + span
+{
+    position: absolute;
+    left: 150px;
+    top: 147px;
+}
+
+.popupbox label #Password2:placeholder-shown + span
+{
+    top: 171px;
+    font-size:0.9em;
+}
+
 .popupbox label #RPassword + span
 {
     position: absolute;
@@ -177,13 +190,11 @@ body
     font-size:0.9em;
 }
 
-
-
-.popupbox .oui 
+.popupbox .close 
 {
-    width: 100%;
+    width: 10%;
     height: 45px;
-    background-color: #362315;
+    background-color: rgb(66, 28, 4);
     border-radius: 6px;
     border: none;
     outline: none;
@@ -191,4 +202,46 @@ body
     cursor: pointer;
     color: antiquewhite;
     font-weight: 500;
+}
+
+.popupbox #Rclose
+{
+    font-size: 20px;
+    position: relative;
+    bottom: 380px;
+    left: 310px;
+} 
+
+.popupbox #Lclose
+{
+    font-size: 20px;
+    position: relative;
+    bottom: 230px;
+    left: 310px;
+}
+
+.popupbox label .submit
+{
+    width: 30%;
+    height: 40px;
+    border-radius: 6px;
+    font-size: 20px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-weight: 500;
+    box-shadow: rgba(0, 0, 0,.1);
+    background-color: #5a371e;
+}
+
+.popupbox label #loginsubmit
+{
+    position: relative;
+    right: 25px;
+}
+
+.popupbox label #registersubmit
+{
+    position: relative;
+    right: 25px;
 }
