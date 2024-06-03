@@ -8,29 +8,43 @@ body
 {
     position: relative;
     top: 150px;
+    right: 150px;
     background-image: url("../../js/img/back.png");
     border: 1px black;
     z-index: 1;
 }
 
-.register
+.popupboutton
 {
-    position: fixed;
-    top: 80px;
+    position: relative;
     padding: 20px 44px;
-    background-color: #8b6242;
     border: none;
     outline: none;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0,0 .1);
     font-size: 20px;
-    color: #362315;
     font-weight: 500;
     cursor: pointer;
     z-index: 1;
 }
 
-.registration_container
+#register
+{
+    bottom:1000px;
+    left: 210px;
+    background-color: #8b6242;
+    color: #362315;
+}
+
+#login
+{
+    bottom:1000px;
+    left: 1900px;
+    background-color: #8b6242;
+    color: #362315;
+}
+
+.popupcontainer
 {
     position: fixed;
     bottom: 0px;
@@ -46,14 +60,14 @@ body
     z-index: 3;
 }
 
-.registration_container.on
+.popupcontainer.on
 {
     opacity: 1;
     pointer-events: auto;
     transition: .4s ease;
 }
 
-.registration_container .registration_box
+.popupcontainer .popupbox
 {
     width: 1000px;
     background-color: #8b6242;
@@ -63,26 +77,26 @@ body
     transform: scale(0);
 }
 
-.registration_container.on .registration_box
+.popupcontainer.on .popupbox
 {
     transform: scale(1);
     transition: .4s ease;
     transition-delay: .25s;
 }
 
-.registration_box h1
+.popupbox h1
 {
     color: black;
     line-height: 1;
 }
 
-.registration_box p 
+.popupbox p 
 {
     color: black; 
     margin: 12px 0 20px;
 }
 
-.registration_box .oui 
+.popupbox .oui 
 {
     width: 100%;
     height: 45px;

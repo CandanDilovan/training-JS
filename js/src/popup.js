@@ -1,22 +1,22 @@
-const pop = document.querySelector(".register");
-const popbox = document.querySelector(".registration_container");
-const quitbox = document.querySelector(".oui");
+const popr = document.getElementById("register");
+const poprbox = document.getElementById("registration_container");
+const pop = document.getElementById("login");
+const popbox = document.getElementById("login_container");
+const quitrbox = document.getElementById("oui");
+const quitbox = document.getElementById("oui2");
+
+popr.onclick = () => {
+	poprbox.classList.add('on');
+}
+
+quitrbox.onclick = () => {
+	poprbox.classList.remove('on');
+}
 
 pop.onclick = () => {
-	registration_container.classList.add('on');
-	ft_overlay()
+	popbox.classList.add('on');
 }
 
 quitbox.onclick = () => {
-	registration_container.classList.remove('on');
-	ft_overlay()
-}
-
-function ft_overlay()
-{
-	var over = document.getElementById('overlay');
-	if (over.style.display == 'none')
-		over.style.display = 'block';
-	else if (over.style.display == 'block')
-		over.style.display = 'none';
+	popbox.classList.remove('on');
 }
