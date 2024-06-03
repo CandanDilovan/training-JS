@@ -14,6 +14,7 @@ body
     z-index: 1;
 }
 
+
 .popupboutton
 {
     position: relative;
@@ -25,7 +26,7 @@ body
     font-size: 20px;
     font-weight: 500;
     cursor: pointer;
-    z-index: 1;
+    z-index: 1;  
 }
 
 #register
@@ -69,7 +70,7 @@ body
 
 .popupcontainer .popupbox
 {
-    width: 1000px;
+    width: 500px;
     background-color: #8b6242;
     border-radius: 8px;
     box-shadow: 0 0 10 rgba(0, 0, 0,.1);
@@ -92,9 +93,91 @@ body
 
 .popupbox p 
 {
+    text-align: left;
+    font-size: 22px;
     color: black; 
     margin: 12px 0 20px;
 }
+
+.popupcontainer label .popuptext
+{
+    position: relative;
+    top: 10px;
+    resize: none;
+    border-radius: 2px;
+    border: none;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #fff;
+    background-color: rgba(0, 0, 0, 0);
+    border-color: #362315;
+    text-align: left;
+    outline: none;
+    justify-content: center;
+    align-self: center;
+    font-size: 18px;
+}
+
+.popupbox label .popuptext + span
+{
+    color: rgba(0, 0, 0,.5);
+    cursor: text;
+    transition: 0.3s ease;
+    padding: 20px 05px 05px 10px;
+}
+
+.popupbox label #username + span
+{
+    position: absolute;
+    left: 150px;
+    top: 77px;
+}
+
+.popupbox label #username:placeholder-shown + span
+{
+    top: 97px;
+    font-size:0.9em;
+}
+
+.popupbox label #mail + span
+{
+    position: absolute;
+    left: 150px;
+    top: 147px;
+}
+
+.popupbox label #mail:placeholder-shown + span
+{
+    top: 171px;
+    font-size:0.9em;
+}
+
+.popupbox label #Password + span
+{
+    position: absolute;
+    left: 150px;
+    top: 225px;
+}
+
+.popupbox label #Password:placeholder-shown + span
+{
+    top: 245px;
+    font-size:0.9em;
+}
+
+.popupbox label #RPassword + span
+{
+    position: absolute;
+    left: 150px;
+    top: 297px;
+}
+
+.popupbox label #RPassword:placeholder-shown + span
+{
+    top: 320px;
+    font-size:0.9em;
+}
+
+
 
 .popupbox .oui 
 {
