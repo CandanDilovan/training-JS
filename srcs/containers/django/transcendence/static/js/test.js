@@ -43,15 +43,15 @@ function AddGameCanvas()
 
     
     let twixsrc = document.createElement('script');
-    twixsrc.setAttribute('src', '../js/twix.js');
+    twixsrc.setAttribute('src', '../static/js/twix.js');
     document.getElementById("scripts").appendChild(twixsrc);
     
     let ballesrc = document.createElement('script');
-    ballesrc.setAttribute('src', '../js/balle.js');
+    ballesrc.setAttribute('src', '../static/js/balle.js');
     document.getElementById("scripts").appendChild(ballesrc);
 
     let mainsrc = document.createElement('script');
-    mainsrc.setAttribute('src', '../js/main.js');
+    mainsrc.setAttribute('src', '../static/js/main.js');
     document.getElementById("scripts").appendChild(mainsrc);
 }
 

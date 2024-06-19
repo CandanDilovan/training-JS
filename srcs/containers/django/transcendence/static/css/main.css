@@ -32,7 +32,7 @@ body
     min-height: 15%;
     position: relative;
     right:0%;
-    background-image: url("../../images/back.png");
+    background-image: url("../js/images/back.png");
     background-size:cover;
     border: 1px black;
     z-index: 1;
@@ -68,7 +68,7 @@ body
 {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     margin: 15%;
-    background-image: url("../../images/staticregister.png");
+    background-image: url("../js/images/staticregister.png");
     background-size: cover;
     color: #362315;
     z-index: 1;
@@ -76,7 +76,7 @@ body
 
 #registerhover
 {
-    background-image: url("../../images/Register2.gif");
+    background-image: url("../js/images/Register2.gif");
     background-size: cover;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: #362315;

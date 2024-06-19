@@ -3,9 +3,9 @@ let canvcont = canevas.getContext("2d");
 
 let fontsize = 80 / canevas.width;
 
-let img1 = new twix(0, canevas.height / 2, "../images/raquetteR.png", 1000);
-let img2 = new twix(canevas.width - 74, canevas.height / 2, "../images/raquetteL.png", 1000);
-let ballon = new balle(canevas.width / 2, canevas.height / 2, "../images/maltesers.png", 500);
+let img1 = new twix(0, canevas.height / 2, "../static/js/images/raquetteR.png", 1000);
+let img2 = new twix(canevas.width - 74, canevas.height / 2, "../static/js/images/raquetteL.png", 1000);
+let ballon = new balle(canevas.width / 2, canevas.height / 2, "../static/js/images/maltesers.png", 500);
 
 let oldtime = Date.now();
 let ms;
