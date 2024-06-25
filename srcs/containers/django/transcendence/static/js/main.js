@@ -137,4 +137,3 @@ function countdown(ms, newtime)
 }
 
 main();
-

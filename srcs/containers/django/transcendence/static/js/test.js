@@ -24,6 +24,12 @@ function PageDisplay()
     {
         AddRegistration();
         AddLogin();
+        if ()
+        {
+            let popup = document.createElement('script');
+            popup.setAttribute('src', '../static/js/popup.js');
+            document.getElementById("scripts").appendChild(popup);
+        }
     }
 }
 
@@ -94,12 +100,13 @@ function AddRegistration()
     document.getElementById('registration_container').appendChild(divRegistration);
 }
 
+
 async function AddLogin()
 {
     let divLogin = document.createElement('div');
 
     divLogin.setAttribute('id', 'login');
-    divLogin.setAttribute('class', 'popupbox')
+    divLogin.setAttribute('class', 'popupbox');
 
     const response = await fetch('login_popup/');
     divLogin.innerHTML = await response.text();
