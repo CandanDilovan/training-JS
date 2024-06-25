@@ -8,8 +8,8 @@ function RemoveLoginRegistration()
     let removeLogin = document.getElementById('login');
     let removeRegistration = document.getElementById('register');
 
-    removeRegistration.remove();
     removeLogin.remove();
+    removeRegistration.remove();
 }
 
 //is registered à changer par un verif dans le backend
@@ -33,7 +33,6 @@ async function PageDisplay()
 }
 
 
-// optimiser l'inculsion des scripts
 function AddGameCanvas()
 {
     let gameCanvas = document.createElement('canvas');
@@ -44,21 +43,14 @@ function AddGameCanvas()
     gameCanvas.setAttribute('style', 'border: 4px solid black');
     
     document.getElementById('gamecanvas').appendChild(gameCanvas);
-    
-    //code en dessous à changer
 
-    
-    let twixsrc = document.createElement('script');
-    twixsrc.setAttribute('src', '../static/js/twix.js');
-    document.getElementById("scripts").appendChild(twixsrc);
-    
-    let ballesrc = document.createElement('script');
-    ballesrc.setAttribute('src', '../static/js/balle.js');
-    document.getElementById("scripts").appendChild(ballesrc);
-
-    let mainsrc = document.createElement('script');
-    mainsrc.setAttribute('src', '../static/js/main.js');
-    document.getElementById("scripts").appendChild(mainsrc);
+    let text_src = ['../static/js/twix.js', '../static/js/balle.js', '../static/js/main.js'];
+    let add_element = Array(3).fill().map(() => document.createElement('script'));
+    for (let a = 0; a < 3; a++)
+    {
+        add_element[a].setAttribute('src', text_src[a]);
+        document.getElementById("scripts").appendChild(add_element[a]);
+    }
 }
 
 async function AddRegistration()
