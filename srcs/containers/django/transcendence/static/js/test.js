@@ -12,7 +12,8 @@ function RemoveLoginRegistration()
     removeLogin.remove();
 }
 
-function PageDisplay()
+//is registered à changer par un verif dans le backend
+async function PageDisplay()
 {
     if (isregistered == 1)
     {
@@ -22,18 +23,17 @@ function PageDisplay()
     }
     else if (isregistered == 0)
     {
-        AddRegistration();
-        AddLogin();
-        if ()
-        {
-            let popup = document.createElement('script');
-            popup.setAttribute('src', '../static/js/popup.js');
-            document.getElementById("scripts").appendChild(popup);
-        }
+        await AddRegistration();
+        await AddLogin();
+
+        let popup = document.createElement('script');
+        popup.setAttribute('src', '../static/js/popup.js');
+        document.getElementById("scripts").appendChild(popup);
     }
 }
 
 
+// optimiser l'inculsion des scripts
 function AddGameCanvas()
 {
     let gameCanvas = document.createElement('canvas');
@@ -61,45 +61,26 @@ function AddGameCanvas()
     document.getElementById("scripts").appendChild(mainsrc);
 }
 
-function AddRegistration()
+async function AddRegistration()
 {
     let divRegistration = document.createElement('div');
     
     divRegistration.setAttribute('id', 'registration_box');
     divRegistration.setAttribute('class', 'popupbox');
-    
-    divRegistration.innerHTML = `
-        <h1>INSCRIPTION</h1>
-        <form id="registration">
-            <label>
-                <input class="popuptext" id="username" type="text" placeholder="" required=""></input>
-                <span>Username</span>
-                <br><br>
-            </label>
-            <label>
-                    <input class="popuptext" id="mail" type="email" placeholder="" required=""></input>
-                    <span>Email</span>
-                    <br><br>
-                </label>
-            <label>
-                <input class="popuptext" id="Password" type="password" placeholder="" required=""></input>
-                <span>Password</span>
-                <br><br>
-            </label>
-            <label>
-                <input class="popuptext" id="RPassword" type="password" placeholder="" required=""></input>
-                <span>Confirm Password</span>
-                <br><br>
-            </label>
-            <label>
-                <button class="close" id="Rclose">X</button>
-                <button class="submit" type="submit" id="registersubmit">Register me</button>
-            </label>
-        </form>
-        `;
-    document.getElementById('registration_container').appendChild(divRegistration);
-}
 
+    try
+    {
+        const response = await fetch('registration_popup/');
+        if (!response.ok)
+            throw new TypeError("registration fail");
+        divRegistration.innerHTML = await response.text();
+        document.getElementById('registration_container').appendChild(divRegistration);
+    }
+    catch (error)
+    {
+        console.log(error);
+    }
+}
 
 async function AddLogin()
 {
@@ -108,7 +89,16 @@ async function AddLogin()
     divLogin.setAttribute('id', 'login');
     divLogin.setAttribute('class', 'popupbox');
 
-    const response = await fetch('login_popup/');
-    divLogin.innerHTML = await response.text();
-    document.getElementById('login_container').appendChild(divLogin);
+    try
+    {
+        const response = await fetch('login_popup/');
+        if (!response.ok)
+            throw new TypeError("login fail");
+        divLogin.innerHTML = await response.text();
+        document.getElementById('login_container').appendChild(divLogin);
+    }
+    catch(error)
+    {
+        console.log(error);
+    }
 }

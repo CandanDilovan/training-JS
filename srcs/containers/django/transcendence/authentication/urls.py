@@ -5,4 +5,5 @@ from authentication import views
 urlpatterns = [
     path('', views.authentication),
     path('login_popup/', views.login_popup),
+    path('registration_popup/', views.registration_popup)
 ]
