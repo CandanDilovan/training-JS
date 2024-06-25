@@ -94,31 +94,14 @@ function AddRegistration()
     document.getElementById('registration_container').appendChild(divRegistration);
 }
 
-function AddLogin()
+async function AddLogin()
 {
     let divLogin = document.createElement('div');
 
     divLogin.setAttribute('id', 'login');
     divLogin.setAttribute('class', 'popupbox')
 
-    divLogin.innerHTML = `
-        <h1>CONNEXION</h1>
-        <form id="loginform">
-            <label>
-                <input class="popuptext" id="Lusername" type="text" placeholder="" required=""></input>
-                <span>Username</span>
-                <br><br>
-            </label>
-            <label>
-                <input class="popuptext" id="Password2" type="password" placeholder="" required=""></input>
-                <span>Password</span>
-                <br><br>
-            </label>
-            <label>
-                <button class="close" id="Lclose">X</button>
-                <button class="submit" type="submit" id="loginsubmit">Log me in</button>
-            </label>
-        </form>
-        `;
+    const response = await fetch('login_popup/');
+    divLogin.innerHTML = await response.text();
     document.getElementById('login_container').appendChild(divLogin);
 }
