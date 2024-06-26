@@ -6,12 +6,17 @@ from django.contrib.auth import login, authenticate, logout
 
 # Create your views here.
 def authentication(request):
+    # logout(request)
+    # if (request.user.is_authenticated):
+    #     return render(request, 'authentication/canvas.html')
+    # else:
     return render(request, 'index.html')
 
 def login_popup(request):
     context = {
         'login_form': LoginForm,
     }
+    print(request.user)
     return render(request, 'authentication/login_popup.html', context)
 
 def registration_popup(request):
