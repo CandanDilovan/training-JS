@@ -3,20 +3,13 @@ let canvcont = canevas.getContext("2d");
 
 let fontsize = 80 / canevas.width;
 
-let img1 = new twix(0, canevas.height / 2, "../static/js/images/raquetteR.png", 1000);
-let img2 = new twix(canevas.width - 74, canevas.height / 2, "../static/js/images/raquetteL.png", 1000);
+let img1 = new racket(0, canevas.height / 2, "../static/js/images/raquetteR.png", 1000);
+let img2 = new racket(canevas.width - 74, canevas.height / 2, "../static/js/images/raquetteL.png", 1000);
 let ballon = new balle(canevas.width / 2, canevas.height / 2, "../static/js/images/maltesers.png", 500);
 
 let oldtime = Date.now();
 let ms;
 let game_begin = 0;
-
-function main()
-{
-    document.addEventListener("keyup", lowkeyup);
-    document.addEventListener("keydown", lowkeydown);
-    const interid = setInterval(rien, 1000/60);
-}
 
 function drawwin(img1, img2)
 {
@@ -27,7 +20,6 @@ function drawwin(img1, img2)
         text = "WINNER is player 1";
     else
         text = "WINNER is player 2";
-    console.log(text);
     canvcont.fillStyle = "Black";
     canvcont.fillText(text, (canevas.width / 2.5), canevas.height / 2);
 }
@@ -45,7 +37,6 @@ function drawscore()
 
 function lowkeydown(key){
 
-    console.log(key.code);
     if (key.code == "ArrowUp")
         img2.up = true;
     else if (key.code == "ArrowDown")
@@ -63,7 +54,6 @@ function lowkeydown(key){
 
 function lowkeyup(key){
 
-    console.log(key.code);
     if (key.code == "ArrowUp")
         img2.up = false;
     else if (key.code == "ArrowDown")
@@ -75,18 +65,18 @@ function lowkeyup(key){
 }
 
 
-function rien()
+function infinite_game_loop()
 {
     let newtime = Date.now();
     ms = (newtime - oldtime) / 1000;
     if (game_begin == 2)
         countdown(ms, newtime);
     else if (game_begin == 1)
-    {  
+    {
         oldtime = newtime;
         if (img1.score < 3 && img2.score < 3 && game_begin == 1)
         {
-            
+
             img2.moving(ms);
             img1.moving(ms);
             ballon.move(ms);
@@ -98,11 +88,11 @@ function rien()
         else if (img1.score >= 3 || img2.score >= 3)
             drawwin(img1, img2);
         drawscore();
-    }  
+    }
     if (game_begin == 0)
             oldtime = newtime;
 }
-        
+
 function reseting()
 {
     ballon.x = canevas.width / 2;
@@ -125,15 +115,19 @@ function countdown(ms, newtime)
         ballon.drawing(canvcont);
         img2.drawing(canvcont);
         img1.drawing(canvcont);
-        console.log(actualfontsize);
         canvcont.fillText(countdown.toString(),(canevas.width / 2) - 40, (canevas.height / 2) + 40);
-        console.log(countdown);
     }
     else
     {
         oldtime = newtime;
         game_begin = 1;
     }
+}
+function main()
+{
+    document.addEventListener("keyup", lowkeyup);
+    document.addEventListener("keydown", lowkeydown);
+    const interid = setInterval(infinite_game_loop, 1000/60);
 }
 
 main();

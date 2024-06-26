@@ -5,11 +5,17 @@ PageDisplay();
 
 function RemoveLoginRegistration()
 {
-    let removeLogin = document.getElementById('login');
-    let removeRegistration = document.getElementById('register');
+    if (document.getElementById('register'))
+    {
+        let removeRegistration = document.getElementById('register');
+        removeRegistration.remove();
+    }
 
-    removeLogin.remove();
-    removeRegistration.remove();
+    if (document.getElementById('login'))
+    {
+        let removeLogin = document.getElementById('login');
+        removeLogin.remove();
+    }
 }
 
 //is registered à changer par un verif dans le backend
@@ -27,7 +33,7 @@ async function PageDisplay()
         await AddLogin();
 
         let popup = document.createElement('script');
-        popup.setAttribute('src', '../static/js/popup.js');
+        popup.setAttribute('src', '../static/js/popup_handler.js');
         document.getElementById("scripts").appendChild(popup);
     }
 }
@@ -44,7 +50,7 @@ function AddGameCanvas()
     
     document.getElementById('gamecanvas').appendChild(gameCanvas);
 
-    let text_src = ['../static/js/twix.js', '../static/js/balle.js', '../static/js/main.js'];
+    let text_src = ['../static/js/racket.js', '../static/js/balle.js', '../static/js/main.js'];
     let add_element = Array(3).fill().map(() => document.createElement('script'));
     for (let a = 0; a < 3; a++)
     {

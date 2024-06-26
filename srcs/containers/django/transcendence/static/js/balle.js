@@ -40,7 +40,7 @@ class balle
 		//droite
 		if (this.dirx * ms > 0)
 		{
-			if (this.x + this.size + (this.dirx * ms) > img2.x
+			if (this.x + this.size + (this.dirx * ms) > img2.x + 37
 			&& (this.y + this.size > img2.y && this.y - this.size < img2.y + 223))
 			{
 				this.dirx *= -1;
@@ -55,7 +55,7 @@ class balle
 		//gauche
 		if (this.dirx * ms < 0)
 		{
-			if (this.x - this.size + (this.dirx * ms) < img1.x + 74
+			if (this.x - this.size + (this.dirx * ms) < img1.x + 64
 			&& (this.y + this.size > img1.y && this.y - this.size < img1.y + 223))
 			{
 				this.dirx *= -1;

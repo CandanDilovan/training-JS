@@ -1,4 +1,4 @@
-class twix
+class racket
 {
     constructor(x, y, str, speed)
     {
@@ -30,7 +30,6 @@ class twix
     {
         let impact = (ball.y - this.y) - (this.height / 2)
         let normal = (impact / (this.height /2));
-        console.log(normal);
         return (normal);
     }
 
@@ -43,9 +42,6 @@ class twix
     {
         if (this.up == true)
         {
-            console.log("y :", this.y)
-            console.log("height", canevas.height);
-            console.log("width", canevas.width);
             if (this.y - (this.speed * ms) >= 0)
                 this.y -= this.speed * ms;
         }
