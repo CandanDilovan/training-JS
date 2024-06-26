@@ -1,54 +1,45 @@
-
-let isregistered = 0;
-
 PageDisplay();
 
 function RemoveLoginRegistration()
 {
-    if (document.getElementById('register'))
+    if (document.getElementById('register') && document.getElementById('registration_container'))
     {
+        let removeRcontenairer = document.getElementById('registration_container');
         let removeRegistration = document.getElementById('register');
+        removeRcontenairer.remove();
         removeRegistration.remove();
     }
 
-    if (document.getElementById('login'))
+    if (document.getElementById('login') && document.getElementById('login_container'))
     {
+        let removeLcontainer = document.getElementById('login_container');
         let removeLogin = document.getElementById('login');
+        removeLcontainer.remove();
         removeLogin.remove();
     }
+}
+
+function DisplayCanvas(value)
+{
+    RemoveLoginRegistration();
+    AddGameCanvas(value);
 }
 
 //is registered à changer par un verif dans le backend
 async function PageDisplay()
 {
-    if (isregistered == 1)
-    {
-        RemoveLoginRegistration();
-        AddGameCanvas();
-        isregistered = 2;
-    }
-    else if (isregistered == 0)
-    {
-        await AddRegistration();
-        await AddLogin();
+    await AddRegistration();
+    await AddLogin();
 
-        let popup = document.createElement('script');
-        popup.setAttribute('src', '../static/js/popup_handler.js');
-        document.getElementById("scripts").appendChild(popup);
-    }
+    let popup = document.createElement('script');
+    popup.setAttribute('src', '../static/js/popup_handler.js');
+    document.getElementById("scripts").appendChild(popup);
 }
 
 
-function AddGameCanvas()
+function AddGameCanvas(value)
 {
-    let gameCanvas = document.createElement('canvas');
-    
-    gameCanvas.setAttribute('id', 'canv');
-    gameCanvas.setAttribute('height', '1080');
-    gameCanvas.setAttribute('width', '2040');
-    gameCanvas.setAttribute('style', 'border: 4px solid black');
-    
-    document.getElementById('gamecanvas').appendChild(gameCanvas);
+    document.getElementById('gamecanvas').innerHTML = value;
 
     let text_src = ['../static/js/racket.js', '../static/js/balle.js', '../static/js/main.js'];
     let add_element = Array(3).fill().map(() => document.createElement('script'));

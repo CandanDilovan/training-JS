@@ -43,8 +43,7 @@ quitbox.onclick = () => {
 
 loginform.addEventListener('submit', function(event){
 	event.preventDefault();
-	isregistered = 1;
-	PageDisplay();
+	send_login_form(this);
 	popbox.classList.remove('on');
 });
 
@@ -57,11 +56,9 @@ registerform.addEventListener('submit', function(event){
 
 
 login.onclick = () =>{
-	isregistered = 1;
 	//loginform.submit();
 }
 
 registersubmited.onclick = () => {
-	isregistered = 1
 	//registerform.submit();
 }
