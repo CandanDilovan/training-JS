@@ -43,7 +43,7 @@ function AddGameCanvas()
 
     
     let twixsrc = document.createElement('script');
-    twixsrc.setAttribute('src', '../js/twix.js');
+    twixsrc.setAttribute('src', '../js/racket.js');
     document.getElementById("scripts").appendChild(twixsrc);
     
     let ballesrc = document.createElement('script');

@@ -7,10 +7,10 @@ from django.contrib.auth import login, authenticate, logout
 # Create your views here.
 def authentication(request):
     # logout(request)
-    # if (request.user.is_authenticated):
-    #     return render(request, 'authentication/canvas.html')
-    # else:
-    return render(request, 'index.html')
+    if (request.user.is_authenticated):
+        return render(request, 'authentication/game.html')
+    else:
+       return render(request, 'authentication/auth_page.html')
 
 def login_popup(request):
     context = {
@@ -36,3 +36,7 @@ def login_session(request):
                 return (render(request, 'authentication/canvas.html'))
             else:
                 return (HttpResponse('Error'))
+
+def logout_btn(request):
+    logout(request)
+    return render(request, 'authentication/placeholder.html')

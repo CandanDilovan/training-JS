@@ -11,6 +11,40 @@ let oldtime = Date.now();
 let ms;
 let game_begin = 0;
 
+const logoutbutton = document.getElementById("logoutest");
+const logoutsubmit = document.getElementById("logout");
+
+logoutbutton.addEventListener('submit', function(event){
+	event.preventDefault();
+})
+
+async function logout()
+{
+    console.log('alo');
+    try
+    {
+        let reponse = await fetch('logout_btn/', {
+            method: 'GET',
+        })
+        if (!reponse.ok)
+            throw new TypeError('Logout failed');
+        document.getElementById('canv').remove();
+        let newpage = await reponse.text();
+        console.log(newpage);
+        document.querySelector('body').innerHTML = newpage;
+        PageDisplay();
+    }
+    catch (error)
+    {
+        console.log(error);
+    }
+}
+
+
+logoutsubmit.onclick = () => {
+    	logout();
+}
+
 function drawwin(img1, img2)
 {
     let text;

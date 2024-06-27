@@ -46,7 +46,7 @@ function AddGameCanvas(value)
     for (let a = 0; a < 3; a++)
     {
         add_element[a].setAttribute('src', text_src[a]);
-        document.getElementById("scripts").appendChild(add_element[a]);
+        document.querySelector('body').appendChild(add_element[a]);
     }
 }
 

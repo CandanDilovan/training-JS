@@ -4,14 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c4c18a29-fe30-4e4d-8b07-3b78f5386cd4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/transcendance.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/transcendance.iml" afterDir="false" />
+    <list default="true" id="2cfaae89-79e4-4295-8e05-ff022f00355f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/containers/django/transcendence/authentication/templates/authentication/canvas.html" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/containers/django/transcendence/authentication/templates/authentication/canvas.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/srcs/containers/django/transcendence/authentication/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/containers/django/transcendence/authentication/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/srcs/containers/django/transcendence/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/containers/django/transcendence/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/containers/django/transcendence/static/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/containers/django/transcendence/static/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/containers/django/transcendence/static/js/page_display.js" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/containers/django/transcendence/static/js/page_display.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/containers/django/transcendence/static/js/popup_handler.js" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/containers/django/transcendence/static/js/popup_handler.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/containers/django/transcendence/static/js/send_form.js" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/containers/django/transcendence/static/js/send_form.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/srcs/containers/django/transcendence/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/containers/django/transcendence/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/containers/nginx/pong/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/containers/nginx/pong/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/containers/nginx/pong/js/test.js" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/containers/nginx/pong/js/test.js" afterDir="false" />
+    </list>
+    <list id="845d950d-b3c0-4752-bb78-cf68a1633f1c" name="Changes by ljerinec" comment="">
+      <change beforePath="$PROJECT_DIR$/srcs/containers/django/transcendence/authentication/templates/authentication/login_popup.html" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/containers/django/transcendence/authentication/templates/authentication/login_popup.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/containers/django/transcendence/authentication/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/containers/django/transcendence/authentication/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/containers/django/transcendence/authentication/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/containers/django/transcendence/authentication/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/containers/django/transcendence/static/js/popup_handler.js" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/containers/django/transcendence/static/js/popup_handler.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,29 +33,60 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/srcs/containers/django/transcendence/static/js/popup_handler.js">
+      <ranges>
+        <range start1="0" end1="2" start2="0" end2="2" changelist="845d950d-b3c0-4752-bb78-cf68a1633f1c" />
+        <range start1="3" end1="5" start2="3" end2="5" changelist="845d950d-b3c0-4752-bb78-cf68a1633f1c" />
+        <range start1="6" end1="8" start2="6" end2="8" changelist="845d950d-b3c0-4752-bb78-cf68a1633f1c" />
+        <range start1="10" end1="12" start2="10" end2="12" changelist="845d950d-b3c0-4752-bb78-cf68a1633f1c" />
+        <range start1="13" end1="15" start2="13" end2="15" changelist="845d950d-b3c0-4752-bb78-cf68a1633f1c" />
+        <range start1="16" end1="17" start2="16" end2="17" changelist="845d950d-b3c0-4752-bb78-cf68a1633f1c" />
+        <range start1="51" end1="52" start2="51" end2="51" changelist="2cfaae89-79e4-4295-8e05-ff022f00355f" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/srcs/containers/django/transcendence/authentication/views.py">
+      <ranges>
+        <range start1="9" end1="13" start2="9" end2="13" changelist="2cfaae89-79e4-4295-8e05-ff022f00355f" />
+        <range start1="38" end1="38" start2="38" end2="43" changelist="845d950d-b3c0-4752-bb78-cf68a1633f1c" />
+      </ranges>
+    </file>
+  </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 1
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 6
 }</component>
-  <component name="ProjectId" id="2iNwjoQBHob0nunRIL50oN1gDug" />
+  <component name="ProjectId" id="2iN08LsTRaIEqiarDGjVdPLffaH" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="false" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/jerin/Desktop/Divers/Python/pythonProject",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.completion&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <console-settings module-name="transcendance" is-module-sdk="true">
+        <option name="myUseModuleSdk" value="true" />
+        <option name="myModuleName" value="transcendance" />
+      </console-settings>
+    </option>
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -55,19 +98,31 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="c4c18a29-fe30-4e4d-8b07-3b78f5386cd4" name="Changes" comment="" />
-      <created>1719344479962</created>
+      <changelist id="2cfaae89-79e4-4295-8e05-ff022f00355f" name="Changes" comment="" />
+      <created>1718788961771</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1719344479962</updated>
-      <workItem from="1719344481067" duration="559000" />
-      <workItem from="1719346438504" duration="6775000" />
-      <workItem from="1719420344984" duration="4416000" />
-      <workItem from="1719432632434" duration="2704000" />
+      <updated>1718788961771</updated>
+      <workItem from="1718788962970" duration="4647000" />
+      <workItem from="1719315568964" duration="481000" />
+      <workItem from="1719317363870" duration="110000" />
+      <workItem from="1719387412285" duration="16503000" />
+      <workItem from="1719476855962" duration="9652000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/srcs/containers/django/transcendence/static/js/popup_handler.js</url>
+          <line>45</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
