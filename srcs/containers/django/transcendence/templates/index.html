@@ -2,24 +2,46 @@
 <!doctype html>
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<title>MULTIVERSUS</title>
-		<link rel="stylesheet" href="{% static 'css/main.css' %}">
-	</head>
-	<body>
-		<h1>MULTIVERSUS <br></h1>
-		<button class="popupboutton" id="register">Sign in</button>
-		<div class="popupcontainer" id="registration_container"></div>
-		<button class="popupboutton" id="login">Log in</button>
-		<div class="popupcontainer" id="login_container"></div>
-		<br> <br>
-		<div class="game" id="gamecanvas">
-			{% block game %} {% endblock %}
-		</div>
-		<div id="scripts">
-			<script src="{% static 'js/page_display.js'%}"></script>
-			<script src="{% static 'js/send_form.js'%}"></script>
-		</div>
-	</body>
+    <head>
+        <meta charset="utf-8">
+        <title>MULTIVERSUS</title>
+        <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    </head>
+    <body>
+        <h1>MULTIVERSUS <br></h1>
+        <button class="popupboutton" id="register">Sign in</button>
+        <div class="popupcontainer" id="registration_container"></div>
+        <button class="popupboutton" id="login">Log in</button>
+        <div class="popupcontainer" id="login_container"></div>
+        <br> <br>
+        <div class="game" id="gamecanvas">
+            {% block game %} {% endblock %}
+        </div>
+        <div id="scripts">
+            <script src="{% static 'js/page_display.js'%}"></script>
+            <script src="{% static 'js/send_form.js'%}"></script>
+            <script>
+                var socket = new WebSocket('ws://' + window.location.host + '/ws/pong/');
+
+                socket.onmessage = function(e) {
+                    var data = JSON.parse(e.data);
+                    console.log(data.message);
+                    // Gérer les messages WebSocket
+                };
+
+                socket.onopen = function(e) {
+                    console.log("WebSocket connection established");
+                };
+
+                socket.onclose = function(e) {
+                    console.log("WebSocket connection closed");
+                };
+
+                function sendMessage(message) {
+                    socket.send(JSON.stringify({'message': message}));
+                }
+            </script>
+        </div>
+    </body>
 </html>
+
