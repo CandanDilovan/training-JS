@@ -4,18 +4,14 @@ function RemoveLoginRegistration()
 {
     if (document.getElementById('register') && document.getElementById('registration_container'))
     {
-        let removeRcontenairer = document.getElementById('registration_container');
-        let removeRegistration = document.getElementById('register');
-        removeRcontenairer.remove();
-        removeRegistration.remove();
+        document.getElementById('registration_container').remove();
+        document.getElementById('register').remove();
     }
 
     if (document.getElementById('login') && document.getElementById('login_container'))
     {
-        let removeLcontainer = document.getElementById('login_container');
-        let removeLogin = document.getElementById('login');
-        removeLcontainer.remove();
-        removeLogin.remove();
+        document.getElementById('login_container').remove();
+        document.getElementById('login').remove();
     }
 }
 
@@ -25,13 +21,14 @@ function DisplayCanvas(value)
     AddGameCanvas(value);
 }
 
-//is registered à changer par un verif dans le backend
 async function PageDisplay()
 {
+    console.log("Gros caca !");
     await AddRegistration();
     await AddLogin();
 
     let popup = document.createElement('script');
+    // popup.setAttribute('type', "module");
     popup.setAttribute('src', '../static/js/popup_handler.js');
     document.getElementById("scripts").appendChild(popup);
 }
@@ -41,12 +38,13 @@ function AddGameCanvas(value)
 {
     document.getElementById('gamecanvas').innerHTML = value;
 
-    let text_src = ['../static/js/racket.js', '../static/js/balle.js', '../static/js/main.js'];
+    let text_src = ['../static/js/pong/racket.js', '../static/js/pong/balle.js', '../static/js/pong/main.js'];
     let add_element = Array(3).fill().map(() => document.createElement('script'));
     for (let a = 0; a < 3; a++)
     {
         add_element[a].setAttribute('src', text_src[a]);
-        document.querySelector('body').appendChild(add_element[a]);
+        document.getElementById('scripts').appendChild(add_element[a]);
+        // document.querySelector('body').appendChild(add_element[a]);
     }
 }
 

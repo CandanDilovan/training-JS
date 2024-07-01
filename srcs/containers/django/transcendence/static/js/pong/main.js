@@ -4,9 +4,9 @@ let canvcont = canevas.getContext("2d");
 
 let fontsize = 80 / canevas.width;
 
-    let racket_left = new racket(0, canevas.height / 2, "../static/js/images/raquetteR.png", 1000);
-    let racket_right = new racket(canevas.width - 74, canevas.height / 2, "../static/js/images/raquetteL.png", 1000);
-    let ballon = new balle(canevas.width / 2, canevas.height / 2, "../static/js/images/maltesers.png", 500);
+let racket_left;
+let racket_right;
+let ballon;
 
 let oldtime = Date.now();
 let ms;
@@ -15,6 +15,13 @@ let game_begin = 0;
 document.getElementById("logout_button").addEventListener('submit', function(event){
     event.preventDefault();
 })
+
+function delete_all()
+{
+    delete obj.racket_left;
+    delete racket_right;
+    delete ballon;
+}
 
 async function logout()
 {
@@ -30,6 +37,7 @@ async function logout()
         let newpage = await reponse.text();
         console.log(newpage);
         document.querySelector('body').innerHTML = newpage;
+        delete_all();
         PageDisplay();
     }
     catch (error)
@@ -38,15 +46,15 @@ async function logout()
     }
 }
 
-
 document.getElementById("logout").onclick = () => {
         logout();
 }
 
 function main()
 {
-
-
+    let racket_left = new racket(0, canevas.height / 2, "../static/js/images/raquetteR.png", 1000);
+    let racket_right = new racket(canevas.width - 74, canevas.height / 2, "../static/js/images/raquetteL.png", 1000);
+    let ballon = new balle(canevas.width / 2, canevas.height / 2, "../static/js/images/maltesers.png", 500);
 
     document.addEventListener("keyup",function (event){lowkeyup(event, racket_left, racket_right)});
     document.addEventListener("keydown", function (event){lowkeydown(event, racket_left, racket_right, ballon)});
