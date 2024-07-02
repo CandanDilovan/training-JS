@@ -8,4 +8,5 @@ urlpatterns = [
     path('registration_popup/', views.registration_popup),
     path('login_session/', views.login_session),
     path('logout_btn/', views.logout_btn),
+    path('game/', views.game),
 ]

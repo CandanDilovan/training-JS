@@ -33,10 +33,13 @@ def login_session(request):
             print(request.POST['password'])
             if user is not None:
                 login(request, user)
-                return (render(request, 'authentication/canvas.html'))
+                return (render(request, 'authentication/game.html'))
             else:
                 return (HttpResponse('Error'))
 
 def logout_btn(request):
     logout(request)
     return render(request, 'authentication/placeholder.html')
+
+def game(request):
+    return render(request, 'authentication/game.html')
