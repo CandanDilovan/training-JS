@@ -42,4 +42,4 @@ def logout_btn(request):
     return render(request, 'authentication/placeholder.html')
 
 def game(request):
-    return render(request, 'authentication/game.html')
+    return render(request, 'authentication/canvas.html')

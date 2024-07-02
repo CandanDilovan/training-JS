@@ -1,7 +1,6 @@
 
 PageDisplay();
 
-
 function RemoveLoginRegistration()
 {
     if (document.getElementById('register') && document.getElementById('registration_container'))
@@ -67,23 +66,28 @@ async function fetching_html(url, element)
 async function AddGameCanvas()
 {
 
+    let div_content = document.getElementById('content');
+    await fetching_html('game/', div_content);
 
-    let body_insert = document.querySelector('body');
+    const scripts = div_content.getElementsByTagName('script');
 
-    await fetching_html('game/', body_insert);
+    // Permet de recup les script dans le html fetch et de les append a la page pour les load
+    for (let i = 0; i < scripts.length; i++) {
+        const newScript = document.createElement('script');
+        if (scripts[i].src) {
+            newScript.src = scripts[i].src;
+        } else {
+            newScript.innerHTML = scripts[i].innerHTML;
+        }
+        document.body.appendChild(newScript);
+    }
 
-
-    // let game_scripts = document.createElement('div');
-    //
-    // game_scripts.setAttribute('id', 'game_scripts');
-    // document.getElementById('scripts').appendChild(game_scripts);
-    // let text_src = ['../static/js/pong/racket.js', '../static/js/pong/balle.js', '../static/js/pong/main.js'];
-    // let add_element = Array(3).fill().map(() => document.createElement('script'));
-    // for (let a = 0; a < 3; a++)
-    // {
-    //     add_element[a].setAttribute('src', text_src[a]);
-    //     game_scripts.appendChild(add_element[a]);
-    // }
+    // Supprime les elements script qui ont ete fetch qui sont donc inutile,
+    // Faut les del dans le sens inverse parce que sinon tu perd le file dans la liste trop tard pour expliquer comprendra qui pourra
+    for (let i = scripts.length - 1; i >= 0; i--) {
+        scripts[i].remove();
+    }
+    document.getElementById('scripts').remove();
 }
 
 async function AddRegistration()
