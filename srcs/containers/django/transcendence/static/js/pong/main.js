@@ -7,36 +7,6 @@ let oldtime = Date.now();
 let ms;
 let game_begin = 0;
 
-document.getElementById("logout_button").addEventListener('submit', function(event){
-    event.preventDefault();
-})
-
-async function logout()
-{
-    console.log('alo');
-    try
-    {
-        let reponse = await fetch('logout_btn/', {
-            method: 'GET',
-        })
-        if (!reponse.ok)
-            throw new TypeError('Logout failed');
-        document.getElementById('canv').remove();
-        let newpage = await reponse.text();
-        document.querySelector('body').innerHTML = newpage;
-        //delete_scripts();
-        PageDisplay();
-    }
-    catch (error)
-    {
-        console.log(error);
-    }
-}
-
-document.getElementById("logout").onclick = () => {
-        logout();
-}
-
 function main()
 {
     let racket_left = new racket(0, canevas.height / 2, "../static/js/images/raquetteR.png", 1000);
@@ -159,6 +129,5 @@ function countdown(ms, newtime, oldtime, racket_left, racket_right, ballon)
         game_begin = 1;
     }
 }
-
 
 main();

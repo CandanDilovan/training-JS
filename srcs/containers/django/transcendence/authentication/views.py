@@ -6,21 +6,13 @@ from django.contrib.auth import login, authenticate, logout
 
 # Create your views here.
 def authentication(request):
-    # logout(request)
-    if (request.user.is_authenticated):
-        return render(request, 'authentication/game.html')
-    else:
-       return render(request, 'authentication/auth_page.html')
-
-def login_popup(request):
     context = {
         'login_form': LoginForm,
     }
-    print(request.user)
-    return render(request, 'authentication/login_popup.html', context)
-
-def registration_popup(request):
-    return render(request, 'authentication/registration_popup.html')
+    if (request.user.is_authenticated):
+        return render(request, 'authentication/game.html')
+    else:
+       return render(request, 'authentication/auth_page.html', context)
 
 def login_session(request):
     if (request.method == 'POST'):
@@ -39,7 +31,8 @@ def login_session(request):
 
 def logout_btn(request):
     logout(request)
-    return render(request, 'authentication/placeholder.html')
+    context = {'login_form': LoginForm}
+    return render(request, 'authentication/btn_page.html', context)
 
 def game(request):
     return render(request, 'authentication/canvas.html')
