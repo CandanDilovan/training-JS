@@ -1,12 +1,15 @@
-<h1>CONNEXION</h1>
+{% load static %}
+
+<h1>LOG IN</h1>
 <form id="loginform">
+    {% csrf_token %}
     <label>
-        <input class="popuptext" id="Lusername" type="text" placeholder="" required=""></input>
+        {{ login_form.username }}
         <span>Username</span>
         <br><br>
     </label>
     <label>
-        <input class="popuptext" id="Password2" type="password" placeholder="" required=""></input>
+        {{ login_form.password }}
         <span>Password</span>
         <br><br>
     </label>
