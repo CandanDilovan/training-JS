@@ -34,5 +34,8 @@ def logout_btn(request):
     context = {'login_form': LoginForm}
     return render(request, 'authentication/btn_page.html', context)
 
+def scripts(request):
+    return render(request, 'authentication/scripts.html')
+
 def game(request):
     return render(request, 'authentication/canvas.html')

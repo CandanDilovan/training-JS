@@ -7,4 +7,6 @@ urlpatterns = [
     path('login_session/', views.login_session),
     path('logout_btn/', views.logout_btn),
     path('game/', views.game),
+    path('scripts/', views.scripts),
+
 ]
