@@ -4,9 +4,6 @@ let game_script_cache = fetch_scripts('scripts/', 'game_script');
 let homepage_script_cache = fetch_scripts('scripts/', 'auth_script');
 let logout_script_cache = fetch_scripts('scripts/', 'home_script');
 
-
-
-
 async function fetch_scripts(url, class_name)
 {
     let script_div = document.createElement('div');
@@ -19,8 +16,8 @@ async function fetch_scripts(url, class_name)
 
 if (document.getElementById('canv'))
 {
-    load_script_form_fetch(game_script_cache);
     load_script_form_fetch(logout_script_cache);
+    load_script_form_fetch(game_script_cache);
 }
 
 if (!document.getElementById('canv'))

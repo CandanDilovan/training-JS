@@ -1,6 +1,6 @@
 class balle
 {
-	constructor(x, y, str, speed){
+	constructor(x, y, str, speed, canevas){
 		this.x = x;
 		this.y = y;
 		this.img = new Image();
@@ -10,6 +10,7 @@ class balle
 		this.dirx = -this.startspeed;
 		this.diry = 0;
 		this.size = 30;
+		this.canevas = canevas
 
 	}
 
@@ -20,14 +21,14 @@ class balle
 
 	resetballs(ms, racket_left, racket_right)
 	{
-		if (this.x < 0 || this.x > canevas.width)
+		if (this.x < 0 || this.x > this.canevas.width)
 		{
-			if (this.x > canevas.width)
+			if (this.x > this.canevas.width)
 				racket_left.scored();
 			if (this.x < 0)
 				racket_right.scored();
-			this.x = canevas.width / 2;
-			this.y = canevas.height / 2;
+			this.x = this.canevas.width / 2;
+			this.y = this.canevas.height / 2;
 			this.diry = 0;
 			if (this.dirx > 0)
 				this.dirx = -this.startspeed;
@@ -50,7 +51,7 @@ class balle
 					this.dirx *= 1.1;
 				this.diry += racket_right.impact(this) * 7;
 			}
-			if (this.y - (this.size / 4) + this.diry > canevas.height || this.y - this.size + this.diry < 0)
+			if (this.y - (this.size / 4) + this.diry > this.canevas.height || this.y - this.size + this.diry < 0)
 				this.diry *= -1;
 		}
 		//gauche
@@ -65,7 +66,7 @@ class balle
 					this.dirx *= 1.1;
 				this.diry += racket_left.impact(this) * 7;
 			}
-			if (this.y - (this.size / 4) + this.diry > canevas.height || this.y - this.size + this.diry < 0)
+			if (this.y - (this.size / 4) + this.diry > this.canevas.height || this.y - this.size + this.diry < 0)
 				this.diry *= -1;
 		}
 	}
