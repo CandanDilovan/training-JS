@@ -22,8 +22,7 @@ if (document.getElementById('canv'))
 
 
 }
-
-if (!document.getElementById('canv'))
+else
 {
     load_script_form_fetch(game_class_script_cache);
     load_script_form_fetch(homepage_script_cache);

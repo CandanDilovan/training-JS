@@ -14,6 +14,8 @@ async function logout()
     load_script_form_fetch(homepage_script_cache);
 }
 
-document.getElementById("logout").onclick = () => {
+document.getElementById("logout").onclick = () =>
+{
+        console.log('hello');
         logout();
 }

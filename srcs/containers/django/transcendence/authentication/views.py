@@ -2,6 +2,7 @@ from django.shortcuts import render
 from authentication.forms import LoginForm
 from django.http import HttpResponse
 from django.contrib.auth import login, authenticate, logout
+from .models import User
 
 
 # Create your views here.
@@ -39,3 +40,10 @@ def scripts(request):
 
 def game(request):
     return render(request, 'authentication/canvas.html')
+
+def profile(request):
+    return render(request, 'authentication/profile.html')
+
+def player_data(request):
+    player = User
+    return HttpResponse(f"<li>{player.username}</li>")
