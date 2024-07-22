@@ -45,5 +45,5 @@ def profile(request):
     return render(request, 'authentication/profile.html')
 
 def player_data(request):
-    player = User
+    player = request.user
     return HttpResponse(f"<li>{player.username}</li>")
